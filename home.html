@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Alpha  Clash  Pro</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.8/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="style.css">
@@ -12,14 +12,14 @@
     <main class="min-h-screen bg-slate-900 bg-[url(images/background.png)] bg-no-repeat bg-center">
         <section id="home" class="flex flex-col items-center min-h-screen justify-center space-y-8">
             <h1 class="text-8xl">Alpha  Clash  Pro</h1>
-            <p>Unleash Your Keyboard kun g fu : Press "Enter" to Play</p>
+            <p>Press "Play Now" to Play</p>
             <button onclick="play()" class="btn btn-outline btn-warning">Play Now</button>
         </section>
         <section id="page2" class="hidden">
             <div class="flex flex-col items-center gap-8 pt-16">
                 <div class="artboard artboard-horizontal phone-6 border-8 rounded-xl bg-[#ffffff] bg-opacity-60">
                     <div class="flex justify-center">
-                        <p class="p-2 bg-black rounded-b-lg"> don't watch keyboard while playing</p>
+                        <p class="p-2 bg-black rounded-b-lg"> Don't watch keyboard while playing</p>
                     </div>
                     <div class="flex justify-center h-full items-center">
                         <p id="currentAlpha" class="text-black text-8xl">y</p>
@@ -76,8 +76,9 @@
         </section>
 
         <section id="last" class="flex justify-center items-center min-h-screen hidden">
-            <div class="bg-slate-400 text-center space-y-8">
-                <h1>Score: <span id="final">0</span> </h1>
+            <div class="bg-orange-300 text-center space-y-8 p-8">
+                <p class="text-8xl">Game Over!!!</p>
+                <h1 class="text-4xl">Score: <span id="final">0</span> </h1>
                 <button onclick="playAgain()" class="btn btn-neutral">Play Again</button>
                 <p>Practice will make you a pro</p>
             </div>

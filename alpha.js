@@ -24,7 +24,11 @@ function removeBgColor(elementId) {
 }
 function buttonPress(event) {
     const pressed=event.key;
-const currentAlphaElement=document.getElementById('currentAlpha').innerText;
+    if(pressed=='Escape'){
+        gameOver();
+    }
+    else{
+        const currentAlphaElement=document.getElementById('currentAlpha').innerText;
 let a=0,b=0;
 if(pressed==currentAlphaElement){
     const score=document.getElementById('score');
@@ -45,6 +49,8 @@ else{
         gameOver();
     }
 }
+    }
+
 console.log(a);
 }
 function gameOver() {
