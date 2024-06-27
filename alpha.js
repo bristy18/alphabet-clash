@@ -15,9 +15,47 @@ function showElementById(elementId) {
 }
 function addBgColor(elementId) {
     const element=document.getElementById(elementId);
-    element.classList.add('bg-amber-500');
+    element.classList.add('bg-amber-500');   
+}
+function removeBgColor(elementId) {
+    const element=document.getElementById(elementId);
+    element.classList.remove('bg-amber-500');
     
 }
+function buttonPress(event) {
+    const pressed=event.key;
+const currentAlphaElement=document.getElementById('currentAlpha').innerText;
+let a=0,b=0;
+if(pressed==currentAlphaElement){
+    const score=document.getElementById('score');
+    const currentScore= parseInt(score.innerText);
+    a=currentScore+1;
+    score.innerText=a;
+    removeBgColor(currentAlphaElement);
+    continueGame();
+}
+else{
+    const life=document.getElementById('life');
+    const currentLife=parseInt(life.innerText);
+    b=currentLife-1;
+    life.innerText=b;
+    removeBgColor(currentAlphaElement);
+    continueGame(); 
+    if(b==0){
+        gameOver();
+    }
+}
+console.log(a);
+}
+function gameOver() {
+    hideElementById('page2');
+    showElementById('last');
+    const score=document.getElementById('score');
+    const finalScore=document.getElementById('final');
+    finalScore.innerText=score.innerText;
+}
+
+document.addEventListener('keyup',buttonPress);
 
 function getRandomAlpha() {
     const alphabetString ='abcdefghijklmnopqrstuvwxyz';
@@ -32,7 +70,6 @@ function getRandomAlpha() {
 }
 function continueGame() {
     const alphabet=getRandomAlpha();
-
     const currentAlphabet=document.getElementById('currentAlpha');
     currentAlphabet.innerText=alphabet;
     
@@ -41,5 +78,16 @@ function continueGame() {
 function play() {
     hideElementById('home');
     showElementById('page2');
+    continueGame();
+}
+function playAgain() {
+    hideElementById('last');
+    showElementById('page2');
+
+    const score=document.getElementById('score');
+    score.innerText=0;
+    const life=document.getElementById('life');
+    life.innerText=5;
+    removeBgColor(currentAlphaElement);
     continueGame();
 }
